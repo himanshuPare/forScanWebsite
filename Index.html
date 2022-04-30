@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <script src="./script.js"></script>
+</head>
+<body>
+
+  <div>
+    <span>array</span>
+    <span id="inputArray"></span>
+
+
+  </div>
+    <div>  
+      <span>sorted array</span>
+      <span id="ResultDiv"></span>
+    </div>
+
+    <script>
+        var MyArray=[1,0,4,0,0,5,2,2,1];
+getOddNum(MyArray);
+function getOddNum(MyArray){
+var leftSum,RightSum,OddNum;
+for(var j=0;j<MyArray.length;j++){
+    leftSum=0,RightSum=0
+    for(var i=0;i<MyArray.length;i++){
+        if(i<j){
+        leftSum +=MyArray[i];
+        } 
+         if(i>j){
+          RightSum+=MyArray[i];
+        }
+      }
+      OddNum=leftSum == RightSum ?MyArray[j]:0; 
+      if(OddNum != 0){
+        console.log(OddNum);
+        
+        break;
+      }else if(j == (MyArray.length -1)){
+        console.log('No Odd Number');
+      }
+}
+
+
+}
+    </script>
+</body>
+</html>
